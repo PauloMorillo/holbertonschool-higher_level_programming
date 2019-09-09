@@ -1,0 +1,1 @@
+this folder has the first exercise to learn python "Hello world"

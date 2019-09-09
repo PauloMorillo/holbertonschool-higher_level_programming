@@ -1,0 +1,1 @@
+this folder has the exercise to learn python
