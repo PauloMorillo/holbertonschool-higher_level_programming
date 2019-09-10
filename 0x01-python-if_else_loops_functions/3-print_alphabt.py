@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+a = 'a'
+while a <= 'z':
+    if a == 'q' or a == 'e':
+        a = chr(ord(a) + 1)
+    print("{}".format(a), end="")
+    a = chr(ord(a) + 1)

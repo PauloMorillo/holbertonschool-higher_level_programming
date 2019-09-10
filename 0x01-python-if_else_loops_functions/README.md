@@ -1,0 +1,1 @@
+This folder has the exercises to learn python conditionals, loops and functions
