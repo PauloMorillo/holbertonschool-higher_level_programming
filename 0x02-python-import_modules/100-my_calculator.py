@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
-import sys
-argv = sys.argv
-argc = len(argv)
 if __name__ == "__main__":
+    from calculator_1 import add, sub, mul, div
+    import sys
+    argv = sys.argv
+    argc = len(argv)
     if argc == 4:
         a = int(argv[1])
         b = int(argv[3])
