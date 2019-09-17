@@ -1,0 +1,1 @@
+TYhis directory has the exercise to learn lists and tuples

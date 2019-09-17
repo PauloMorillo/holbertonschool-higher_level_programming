@@ -1,0 +1,8 @@
+def no_c(my_string):
+    a = 0
+    while a < len(my_string):
+        if my_string[a] != 'c':
+            cmy_string = my_string[a]
+        a = a + 1
+    print(a)
+    return cmy_string
