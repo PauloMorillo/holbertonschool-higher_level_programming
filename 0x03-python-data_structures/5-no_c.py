@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def no_c(my_string):
     a = 0
     cmy_string = ""
