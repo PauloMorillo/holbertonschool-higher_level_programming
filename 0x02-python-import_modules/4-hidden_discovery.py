@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-   __import__("__pycache__/hidden_4.cpython3.4.pyc")
-#    dir(hidden_4)
- #   print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+    import hidden_4
+    dire = dir(hidden_4)
+    a = 0
+    while a < len(dire):
+        if dire[a][0] != '_' and dire[a][0] != '_':
+            print(dire[a])
+        a = a + 1
