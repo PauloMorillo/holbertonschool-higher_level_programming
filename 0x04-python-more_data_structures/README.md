@@ -1,0 +1,1 @@
+This directory has the exercise to learn aboput data structures set and directory
