@@ -17,13 +17,15 @@ def roman_to_int(roman_string):
                 else:
                     return 0
                 if nrom[b] > nrom[roman_string[a - 1]]:
-                    maxi = 1
+                    maxi = maxi + 1
                     subst = nrom[roman_string[a - 1]]
                 a = a + 1
             if maxi == 1:
                 return sum(intro) - (subst * 2)
-            else:
+            elif maxi == 0:
                 return sum(intro)
+            else:
+                return 0
         else:
             return 0
     else:
