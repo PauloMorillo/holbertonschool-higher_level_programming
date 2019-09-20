@@ -18,9 +18,10 @@ def roman_to_int(roman_string):
                     return 0
                 if nrom[b] > nrom[roman_string[a - 1]]:
                     maxi = 1
+                    subst = nrom[roman_string[a - 1]]
                 a = a + 1
             if maxi == 1:
-                return sum(intro) - 2
+                return sum(intro) - (subst * 2)
             else:
                 return sum(intro)
         else:
