@@ -5,11 +5,17 @@ def roman_to_int(roman_string):
             nrom = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500,
                     "M": 1000}
             a = 1
-            intro = [nrom[roman_string[a - 1]]]
+            if nrom[roman_string[a - 1]]:
+                intro = [nrom[roman_string[a - 1]]]
+            else:
+                return 0
             maxi = 0
             while a < len(roman_string):
                 b = roman_string[a]
-                intro = intro + [nrom[b]]
+                if nrom[b]:
+                    intro = intro + [nrom[b]]
+                else:
+                    return 0
                 if nrom[b] > nrom[roman_string[a - 1]]:
                     maxi = 1
                 a = a + 1
