@@ -26,9 +26,11 @@ class Square:
 
     @position.setter
     def position(self, value):
+        if (type(value) != tuple or len(value) != 2 or
+            type(value[0]) != int or value[0] < 0 or
+                type(value[1]) != int or value[1] < 0):
+            raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
-        if not isinstance(value, tuple):
-            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         return self.__size * self.__size
@@ -37,20 +39,24 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            a = 0
-            while a < self.__size:
-                b = 0
-                c = 0
-                d = 0
-                while c < self.__position[0]:
-                    if a == 0:
-                        while d < self.__position[1]:
-                            print()
-                            d = d + 1
-                    print("{}".format(" "), end="")
-                    c = c + 1
-                while b < self.__size:
-                    print("{}".format("#"), end="")
-                    b = b + 1
-                print()
-                a = a + 1
+            try:
+                a = 0
+                while a < self.__size:
+                    b = 0
+                    c = 0
+                    d = 0
+                    while c < self.__position[0]:
+                        if a == 0:
+                            while d < self.__position[1]:
+                                print()
+                                d = d + 1
+                        print("{}".format(" "), end="")
+                        c = c + 1
+                    while b < self.__size:
+                        print("{}".format("#"), end="")
+                        b = b + 1
+                    print()
+                    a = a + 1
+            except:
+                raise TypeError(
+                    'position must be a tuple of 2 positive integers')
