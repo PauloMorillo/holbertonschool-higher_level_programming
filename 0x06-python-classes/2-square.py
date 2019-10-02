@@ -11,4 +11,4 @@ class Square:
             else:
                 raise ValueError("size must be >= 0")
         except TypeError:
-            raise Exception("size must be an integer")
+            raise TypeError("size must be an integer")
