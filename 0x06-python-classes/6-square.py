@@ -44,13 +44,14 @@ class Square:
                 b = 0
                 c = 0
                 d = 0
-                while c < self.__position[0]:
+                while c <= self.__position[0]:
                     if a == 0:
                         while d < self.__position[1]:
                             print()
                             d = d + 1
-                    print("{}".format(" "), end="")
                     c = c + 1
+                    if c <= self.__position[0]:
+                        print("{}".format(" "), end="")
                 while b < self.__size:
                     print("{}".format("#"), end="")
                     b = b + 1
