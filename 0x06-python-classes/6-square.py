@@ -6,7 +6,7 @@ docstring, or as a docstring on the __init__ method itself."""
 class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
-        self.__position = position
+        self.position = position
 
     @property
     def size(self):
@@ -39,24 +39,20 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            try:
-                a = 0
-                while a < self.__size:
-                    b = 0
-                    c = 0
-                    d = 0
-                    while c < self.__position[0]:
-                        if a == 0:
-                            while d < self.__position[1]:
-                                print()
-                                d = d + 1
-                        print("{}".format(" "), end="")
-                        c = c + 1
-                    while b < self.__size:
-                        print("{}".format("#"), end="")
-                        b = b + 1
-                    print()
-                    a = a + 1
-            except:
-                raise TypeError(
-                    'position must be a tuple of 2 positive integers')
+            a = 0
+            while a < self.__size:
+                b = 0
+                c = 0
+                d = 0
+                while c < self.__position[0]:
+                    if a == 0:
+                        while d < self.__position[1]:
+                            print()
+                            d = d + 1
+                    print("{}".format(" "), end="")
+                    c = c + 1
+                while b < self.__size:
+                    print("{}".format("#"), end="")
+                    b = b + 1
+                print()
+                a = a + 1
