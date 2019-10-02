@@ -6,7 +6,7 @@ docstring, or as a docstring on the __init__ method itself."""
 class Square:
     def __init__(self, size=0):
         try:
-            if size >= 0:
+            if size > 0:
                 self.__size = size
             else:
                 raise ValueError("size must be >= 0")
