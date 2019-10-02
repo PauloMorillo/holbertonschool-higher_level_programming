@@ -41,7 +41,7 @@ class Square:
             while a < self.__size:
                 b = 0
                 c = 0
-                while c < self.__position[0] and self.__position[1] >= 0:
+                while c < self.__position[0] and self.__position[1] <= 0:
                     print("{}".format(" "), end="")
                     c = c + 1
                 while b < self.__size:
