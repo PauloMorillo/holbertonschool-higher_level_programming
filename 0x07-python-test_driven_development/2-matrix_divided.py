@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+def matrix_divided(matrix, div):
+    if type(div) == int or type(div) == float:
+        if div == 0:
+            raise ZeroDivisionError("division by zero")
+    else:
+        raise TypeError("div must be a number")
+    if type(matrix) == list and type(matrix[0]) == list:
+        newma = [matrix[0][:] for i in matrix]
+        lenr = len(matrix[0])
+        a = 0
+        while a < len(matrix):
+            b = 0
+            while b < lenr:
+
+                if type(matrix[a][b]) != int and type(matrix[a][b]) != float:
+                    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                newma[a][b] = round((matrix[a][b] / div), 2)
+                b = b + 1
+            if lenr != len(matrix[a]):
+                raise TypeError("Each row of the matrix must have the same size")
+            a = a + 1
+        return newma
+    else:
+         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
