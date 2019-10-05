@@ -1,8 +1,3 @@
-add module
-======================
-
-Using add_integer
--------------------
 >>> add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer(2,2)
@@ -65,4 +60,8 @@ TypeError: a must be an integer
 
 >>> add_integer(23, [])
 Traceback (most recent call last):
-TypeError: b must be an
+TypeError: b must be an integer
+
+>>> add_integer(23, [])
+Traceback (most recent call last):
+TypeError: b must be an integer
