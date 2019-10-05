@@ -65,4 +65,4 @@ TypeError: a must be an integer
 
 >>> add_integer(23, [])
 Traceback (most recent call last):
-TypeError: b must be an
+TypeError: b must be an integer
