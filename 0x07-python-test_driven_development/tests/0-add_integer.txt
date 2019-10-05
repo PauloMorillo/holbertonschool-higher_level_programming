@@ -5,13 +5,13 @@ Using add_integer
 -------------------
 >>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(2,2)
+>>> add_integer(2, 2)
 4
 
->>> add_integer(1,2)
+>>> add_integer(1, 2)
 3
 
->>> add_integer("hello",3)
+>>> add_integer("hello", 3)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
@@ -66,3 +66,7 @@ TypeError: a must be an integer
 >>> add_integer(23, [])
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
