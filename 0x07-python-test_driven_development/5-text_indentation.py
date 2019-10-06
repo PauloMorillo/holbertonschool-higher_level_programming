@@ -17,6 +17,8 @@ def text_indentation(text):
             if a != p:
                 if text[a + 1] == " ":
                     print(text[p:a + 1])
+                    while text[a] == " ":
+                        a = a + 1
                     p = a + 2
                 else:
                     print(text[p:a + 1])
@@ -24,4 +26,6 @@ def text_indentation(text):
                 print()
         a = a + 1
     if p != a - 1:
+        while text[p] == " ":
+            p = p + 1
         print(text[p:], end="")
