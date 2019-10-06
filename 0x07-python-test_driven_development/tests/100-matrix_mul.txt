@@ -1,0 +1,24 @@
+matrix multiplication
+======================
+
+Using matrix_mul
+----------------------
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> matrix_mul([[1, 1], [0, 1]], [[2, 0], [3, 4]])
+array([[5, 4],
+       [3, 4]])
+
+>>> matrix_mul("asdsa", [[2, 0], [3, 4]])
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+>>> matrix_mul([[2, 0], [3, 4]], "asdsa")
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+>>> matrix_mul()
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
