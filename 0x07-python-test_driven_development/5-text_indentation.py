@@ -23,3 +23,5 @@ def text_indentation(text):
                     p = a + 1
                 print()
         a = a + 1
+    if p != a - 1:
+        print(text[p:], end="")
