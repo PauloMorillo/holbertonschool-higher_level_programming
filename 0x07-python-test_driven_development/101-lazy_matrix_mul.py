@@ -13,6 +13,10 @@ def lazy_matrix_mul(m_a, m_b):
     Returns:
         The return value. m_a * m_b
     """
+    if type(m_a) != list:
+        raise TypeError("m_a must be a list")
+    if type(m_b) != list:
+        raise TypeError("m_b must be a list")
     a = np.array(m_a)
     b = np.array(m_b)
     return a.dot(b)
