@@ -17,10 +17,10 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError("m_a must be a list")
     if type(m_b) != list:
         raise TypeError("m_b must be a list")
-    if len(m_a[0]) < 1:
-        raise ValueError("m_a can’t be empty")
-    if len(m_b[0]) < 1:
-        raise ValueError("m_b can’t be empty")
+#    if len(m_a[0]) < 1:
+#        raise ValueError("m_a can’t be empty")
+#    if len(m_b[0]) < 1:
+#        raise ValueError("m_b can’t be empty")
     a = np.array(m_a)
     b = np.array(m_b)
     return a.dot(b)
