@@ -1,0 +1,11 @@
+matrix multiplication
+======================
+
+Using lazy_matrix_mul
+----------------------
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+>>> lazy_matrix_mul([[1, 1], [0, 1]], [[2, 0], [3, 4]])
+array([[5, 4],
+       [3, 4]])
