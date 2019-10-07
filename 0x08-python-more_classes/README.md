@@ -1,0 +1,1 @@
+This folde has more exercises to learn how to use clasess
