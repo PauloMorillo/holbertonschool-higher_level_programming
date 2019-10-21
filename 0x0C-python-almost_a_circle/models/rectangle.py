@@ -90,13 +90,22 @@ class Rectangle(Base):
                                                        self.__y, self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Function to update values"""
-       # if len(args) > 0:
-       self.__width = args
-       #    if len(args) > 0:
-       self.__height = args
-       #if len(args) > 0:
-       self.__x = args
-       #             if len(args) > 0:
-       self.__y = args
+        atr = ["id", "width", "height", "x", "y"]
+        if not args:
+            if kwargs:
+                keys = list(kwargs)
+                for k in range(len(keys)):
+                    setattr(self, keys[k], kwargs[keys[k]])
+        if len(atr) < len(args):
+            leng = len(atr)
+        else:
+            leng = len(args)
+        for a in range(leng):
+            setattr(self, atr[a], args[a])
+
+    def to_dictionary(self):
+        """Function to return dictionary"""
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
