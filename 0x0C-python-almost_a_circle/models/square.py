@@ -10,8 +10,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Square begins here"""
         super().__init__(size, size, x, y, id)
-        self.width = size
-        self.height = size
         self.size = size
 
     def __str__(self):
@@ -22,16 +20,13 @@ class Square(Rectangle):
     @property
     def size(self):
         """Getter value"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
         """Setter value"""
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__size = value
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """Function to update values of square"""
