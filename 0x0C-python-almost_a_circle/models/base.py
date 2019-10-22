@@ -63,5 +63,5 @@ class Base:
             lisob = cls.from_json_string(f.read())
             lisnob = []
             for dic in range(len(lisob)):
-                lisnob = lisnob + [cls.create(**lisob[dic])]
+                lisnob.append(cls.create(**lisob[dic]))
             return lisnob
