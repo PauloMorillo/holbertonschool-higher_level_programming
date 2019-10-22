@@ -60,9 +60,8 @@ class Base:
         with open(cls.__name__ + ".json", 'r') as f:
             if not f:
                 return []
-            else:
-                lisob = cls.from_json_string(f.read())
-                lisnob = []
-                for dic in range(len(lisob)):
-                    lisnob = lisnob + [cls.create(**lisob[dic])]
+            lisob = cls.from_json_string(f.read())
+            lisnob = []
+            for dic in range(len(lisob)):
+                lisnob = lisnob + [cls.create(**lisob[dic])]
             return lisnob
