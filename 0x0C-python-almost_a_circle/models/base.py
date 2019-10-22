@@ -47,7 +47,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Fucntion to returns an instance with all attributes already set"""
-        du = cls(1, 1, 1, 1)
+        du = cls(1, 1)
         du.update(**dictionary)
         return du
 
