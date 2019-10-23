@@ -57,11 +57,12 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Function to load a list of instances"""
-        with open(cls.__name__ + ".json", 'r') as f:
-            if f:
+        try:
+            with open(cls.__name__ + ".json", 'r') as f:
                 lisob = cls.from_json_string(f.read())
                 lisnob = []
-                for dic in range(len(lisob)):
-                    lisnob.append(cls.create(**lisob[dic]))
-                return lisnob
+                for dic in lisob:
+                    lisnob.append(cls.create(**dic))
+            return lisnob
+        except:
             return []
