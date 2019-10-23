@@ -89,5 +89,21 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as e:
             Base.from_json_string({1, 2})
 
+    def test_json_from_none(self):
+        """test a none in a json string"""
+        ans = Base.to_json_string(None)
+        self.assertEqual(ans, "[]")
+
+    def test_multi_dict_list(self):
+        """test multiple dicts in a json_list"""
+        ans = Base.to_json_string([{"a": 1}, {"b": 2}])
+        self.assertEqual(type(ans), str)
+
+    def test_saves_empty_list_in_file(self):
+        """test to save an empty list to a file"""
+        Base.save_to_file([])
+        with open("Base.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+
 if __name__ == '__main__':
     unittest.main()
