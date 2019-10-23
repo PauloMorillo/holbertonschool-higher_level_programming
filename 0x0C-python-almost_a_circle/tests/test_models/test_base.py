@@ -51,5 +51,43 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 12)
         self.assertEqual(b3.id, 10)
 
+    def test_savefileerror(self):
+        """Test for savefileerror"""
+        with self.assertRaises(TypeError):
+            Base.save_to_file({1, 2})
+
+    def test_jsonstringerror(self):
+        """Test for from_json_method with int."""
+        with self.assertRaises(TypeError):
+            Base.from_json_string(39)
+
+    def test_jsonstringemptydict(self):
+        """Test json with empty dict"""
+        list_input = [{}]
+        json_list_input = Base.to_json_string(list_input)
+        listob = Base.from_json_string(json_list_input)
+        self.assertEqual(listob, [{}])
+
+    def test_empty_json(self):
+        """tests if list is empty"""
+        lis = Base.to_json_string([])
+        self.assertEqual(lis, "[]")
+
+    def test_emptydict_json(self):
+        """tests for empty dict"""
+        dic = Base.to_json_string([{}])
+        self.assertEqual(dic, "[{}]")
+
+    def test_nonefile(self):
+        """tests for none file"""
+        Base.save_to_file(None)
+        with open("Base.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_from_string_set(self):
+        """tests func from_json with set"""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string({1, 2})
+
 if __name__ == '__main__':
     unittest.main()
