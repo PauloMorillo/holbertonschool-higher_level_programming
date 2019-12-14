@@ -4,6 +4,7 @@ import sys
 import MySQLdb
 
 def main():
+    """main function"""
     db = MySQLdb.connect(host='localhost',
                          user=sys.argv[1],
                          passwd=sys.argv[2],
