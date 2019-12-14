@@ -12,7 +12,8 @@ def main():
                          db=sys.argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id")
+    cur.execute("SELECT * FROM states WHERE name ='" +
+                sys.argv[4] + "' ORDER BY id")
     rows = cur.fetchall()
     for _row in rows:
         print(_row)
