@@ -12,7 +12,7 @@ def main():
                          db=sys.argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name ='{}' ORDER BY id"
+    cur.execute("SELECT * FROM states WHERE name = BINARY '{}' ORDER BY id"
                 .format(sys.argv[4]))
     rows = cur.fetchall()
     for _row in rows:
