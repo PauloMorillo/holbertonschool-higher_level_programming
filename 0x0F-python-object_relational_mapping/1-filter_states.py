@@ -12,9 +12,12 @@ def main():
                          db=sys.argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id")
+    cur.execute("SELECT * FROM states WHERE name REGEXP BINARY"
+                "'^N' ORDER BY id")
     rows = cur.fetchall()
     for _row in rows:
         print(_row)
+    cur.close()
+    db.close()
 if __name__ == '__main__':
     main()
