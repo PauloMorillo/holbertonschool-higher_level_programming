@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This Module prints all of a relational databases"""
+"""This Module prints cities of state in a relational databases"""
 import sys
 import MySQLdb
 
@@ -12,11 +12,16 @@ def main():
                          db=sys.argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities"
+    cur.execute("SELECT cities.name FROM cities"
                 " INNER JOIN states ON cities.state_id = states.id"
-                " ORDER BY cities.id")
+                " WHERE states.name = %s  ORDER BY cities.id", [sys.argv[4]])
     rows = cur.fetchall()
+    a = 0
     for _row in rows:
-        print(_row)
+        if a != 0:
+            print(", ", end="")
+        a = a + 1
+        print("{}".format(_row[0]), end="")
+    print("")
 if __name__ == '__main__':
     main()
