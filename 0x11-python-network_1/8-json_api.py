@@ -16,7 +16,8 @@ if __name__ == "__main__":
     try:
         js = req.json()
     except:
-        js = ""
+        js = dict()
+        js['nada'] = "nada"
     if js:
         try:
             print("[{}] {}".format(js['id'], js['name']))
