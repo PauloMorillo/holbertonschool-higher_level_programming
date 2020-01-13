@@ -13,7 +13,10 @@ if __name__ == "__main__":
         value = ""
     values = {'q': value}
     req = requests.post("http://0.0.0.0:5000/search_user", data=values)
-    js = req.json()
+    try:
+        js = req.json()
+    except:
+        js = ""
     if js:
         try:
             print("[{}] {}".format(js['id'], js['name']))
