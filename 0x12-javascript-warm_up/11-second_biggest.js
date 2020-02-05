@@ -1,14 +1,12 @@
 #!/usr/bin/node
+function sortNumber (a, b) {
+  return a - b;
+}
+
 if (process.argv[2] && process.argv[3]) {
-  let secon = Math.floor(process.argv[3]);
-  let last = Math.floor(process.argv[2]);
-  for (let con = 0; con < process.argv.length; con++) {
-    if (last < process.argv[con]) {
-      secon = last;
-      last = process.argv[con];
-    }
-  }
-  console.log(secon);
+  const sortargu = process.argv.sort(sortNumber);
+  const leng = sortargu.length;
+  console.log(sortargu[leng - 2]);
 } else if (process.argv[2]) {
   console.log('0');
 } else {
