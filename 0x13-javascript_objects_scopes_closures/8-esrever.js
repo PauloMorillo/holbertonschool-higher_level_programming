@@ -1,6 +1,6 @@
 #!/usr/bin/node
 exports.esrever = function (list) {
-  if (list.length > 0) {
+  if (Array.isArray(list)) {
     const rlist = [];
     const len = list.length;
     for (let con = 0; con < len; con++) {
