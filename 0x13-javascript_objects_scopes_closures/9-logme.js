@@ -7,6 +7,6 @@ const makeCounter = function (b) {
 
 exports.logMe = function (item) {
   const coun = makeCounter(1);
-  let pr = coun + ": " + item;
+  const pr = coun + ': ' + item;
   console.log(pr);
 };
