@@ -1,0 +1,1 @@
+# This directory has exercise to learn about objects, scopes and closures with javascript
