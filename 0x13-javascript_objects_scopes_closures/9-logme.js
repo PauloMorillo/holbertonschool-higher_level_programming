@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let a = 0;
+let a = -1;
 const makeCounter = function (b) {
   a = a + b;
   return (a);
