@@ -1,0 +1,1 @@
+# This directory has exercises to learn about web scraping and how to open a read files with fs method
