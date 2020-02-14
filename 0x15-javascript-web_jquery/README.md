@@ -1,0 +1,1 @@
+# This directory has exercises to learn about jquery
