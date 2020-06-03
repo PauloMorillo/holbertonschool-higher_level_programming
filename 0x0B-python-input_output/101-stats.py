@@ -22,7 +22,7 @@ if __name__ == "__main__":
             # print(line)
             b = 0
             each_argvs = line.split(" ")
-            if len(each_argvs) == 9:
+            if len(each_argvs) > 6:
                 status = each_argvs[-2]
                 if status in statuses:
                     i = statuses.index(status)
