@@ -55,13 +55,14 @@ while q < n:
                         # i, j = queens.pop()
                         # q = q - 1
                     if len(queens) == n:
-                        print(queens)
+                        if queens[0][0] == 0:
+                            print(queens)
                         i = queens[0][0]
                         j = queens[0][1]
                         # print(i, j, "esto es lo que devolvemos")
                         q = 0 - 1
                         queens = []
-                        if j == n - 2:
+                        if j == n - 1:
                             i = n
                             q = n
                             break
